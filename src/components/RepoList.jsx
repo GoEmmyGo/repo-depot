@@ -4,6 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import "./RepoList.css";
 
 const RepoList = (props) => {
   const {
@@ -19,6 +20,7 @@ const RepoList = (props) => {
     // dateCommitCreated
   } = props;
 
+
   // const repoName = props.parseData.name
   // const repoLanguage = props.parseData.language
   // const repoDescription = props.parseData.description
@@ -27,21 +29,24 @@ const RepoList = (props) => {
   // const repoCreationDate = props.parseData.created_at
 
   return (
-    <div>
-      <Accordion>
+    <div className="repo-list">
+      <Accordion
+        style={{ background: "#FFCDB0"}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-        >
+          style={{ textAlign: 'center',
+                   color: '#ff10f0',
+                   margin: '0.5rem' }}>
           <Typography>{name}</Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography>{language}</Typography>
+        <AccordionDetails style={{ textAlign: 'left'}}>
           <Typography>{description}</Typography>
-          <Typography>{stargazers_count}</Typography>
-          <Typography>{forks_count}</Typography>
-          <Typography>{created_at}</Typography>
+          <Typography style={{ color: '#fc8668' }}>{language}</Typography>
+          <Typography>Stargazers Count: {stargazers_count}</Typography>
+          <Typography>Fork Count: {forks_count}</Typography>
+          <Typography>Date Created: {created_at}</Typography>
         </AccordionDetails>
         {/* </Accordion>
       <Accordion> */}

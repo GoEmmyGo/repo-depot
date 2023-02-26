@@ -1,0 +1,60 @@
+
+header {
+    font-size: 10rem;
+    font-family: 'Monofett', cursive;
+    color: #FF10F0;
+    -webkit-text-stroke: #FEF180;
+    ;
+}
+
+.full-page {
+    display: flex;
+    flex-direction: row;
+    background-image: url('images/costco-background.jpg');
+    height: 100vh;
+    background-position: top, left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+}
+
+.left-hand-side {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-hand-side {
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    padding-right: 0.4rem;
+    width: 25%;
+    /* justify-content: flex-end; */
+    max-height: 90%;
+    overflow-y: scroll;
+    transform: translate3d(20px, -20px, 20px); 
+}
+
+/* * {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #000000;
+  } */
+
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    opacity: 0%;
+    margin-top: 5.5rem;
+
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
