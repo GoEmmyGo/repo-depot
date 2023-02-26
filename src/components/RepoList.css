@@ -1,5 +1,6 @@
-/* .repo-list {
-    width: 50%;
-    flex-direction: column;
-    align-items: flex-end;
-} */
+.repo-list {
+    /* display: flex; */
+    margin-left: 2rem;
+    margin-right: 2rem;
+    /* background-image: url("./images/crumpled-paper.jpg"), */
+}

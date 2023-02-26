@@ -31,19 +31,25 @@ const RepoList = (props) => {
   return (
     <div className="repo-list">
       <Accordion
-        style={{ background: "#FFCDB0"}}>
+        style={{ width: "80%",
+                 backgroundColor: "#F7BFB4",
+                //  backgroundImage: 'url(images/crumpled-ticket.jpg)',
+                //  margin: "0.3rem",
+                //  alignitems: "center",
+                 borderRadius: "0.3rem" }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
           style={{ textAlign: 'center',
                    color: '#ff10f0',
+                  //  color: '#F7BFB4',
                    margin: '0.5rem' }}>
           <Typography>{name}</Typography>
         </AccordionSummary>
-        <AccordionDetails style={{ textAlign: 'left'}}>
+        <AccordionDetails style={{ textAlign: 'left', margin: '0.5rem', }}>
           <Typography>{description}</Typography>
-          <Typography style={{ color: '#fc8668' }}>{language}</Typography>
+          <Typography style={{ color: '#F7BFB4' }}>{language}</Typography>
           <Typography>Stargazers Count: {stargazers_count}</Typography>
           <Typography>Fork Count: {forks_count}</Typography>
           <Typography>Date Created: {created_at}</Typography>
