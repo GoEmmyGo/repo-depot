@@ -190,7 +190,7 @@ const Landing = () => {
           {badSearchTerm 
             ? 
               (<div className="error-message">
-                  Uhhh, what's {searchTerm}? We got Brawndo?
+                  Uhhh, what's {searchTerm}? <br/>We got Brawndo?
               </div>)
             : 
               null}
