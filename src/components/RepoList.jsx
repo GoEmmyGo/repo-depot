@@ -29,6 +29,7 @@ const RepoList = (props) => {
                    borderRadius: "0.3rem" }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
+            className='accordion-summary'
             aria-controls="panel1a-content"
             id="panel1a-header"
             style={{ textAlign: 'left',
@@ -41,7 +42,7 @@ const RepoList = (props) => {
                     fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
                     marginLeft: '1.5rem',
                     marginRight: '1.5rem'}}>{description}</Typography>
-          <div className="accordian-details">
+          <div className="accordion-details">
             <AccordionDetails>
                   <p>{language}</p>
                   <p>{stargazers_count} stargazers</p>

@@ -3,7 +3,7 @@
     overflow-x: visible;
 }
 
-.accordian-details {
+.accordion-details {
     background-image: url('images/Ticket.png') !important;
     background-position: center;
     background-size: contain;
@@ -17,7 +17,7 @@
     overflow-y: visible;
 }
 
-.accordian-details p {
+.accordion-details p {
     box-shadow: inset 0 0 0 0 rgba(232, 252, 120, .8);
     transition: color .9s ease-in-out, box-shadow .9s ease-in-out;
     width: fit-content;
@@ -26,7 +26,7 @@
     margin-top: 0.7rem;
 }
 
-.accordian-details p:hover {
+.accordion-details p:hover {
     box-shadow: inset 1000px 0 0 0 rgba(232, 252, 120, .8);
 }
 
