@@ -21,48 +21,42 @@ const RepoList = (props) => {
   } = props;
 
 
-  // const repoName = props.parseData.name
-  // const repoLanguage = props.parseData.language
-  // const repoDescription = props.parseData.description
-  // const repoStars = props.parseData.stargazers_count
-  // const repoForks = props.parseData.forks_count
-  // const repoCreationDate = props.parseData.created_at
-
   return (
     <div className="repo-list">
-      <Accordion
-        style={{ width: "80%",
-                 backgroundColor: "#F7BFB4",
-                //  backgroundImage: 'url(images/crumpled-ticket.jpg)',
-                //  margin: "0.3rem",
-                //  alignitems: "center",
-                 borderRadius: "0.3rem" }}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-          style={{ textAlign: 'center',
-                   color: '#ff10f0',
-                  //  color: '#F7BFB4',
-                   margin: '0.5rem' }}>
-          <Typography>{name}</Typography>
-        </AccordionSummary>
-        <AccordionDetails style={{ textAlign: 'left', margin: '0.5rem', }}>
-          <Typography>{description}</Typography>
-          <Typography style={{ color: '#F7BFB4' }}>{language}</Typography>
-          <Typography>Stargazers Count: {stargazers_count}</Typography>
-          <Typography>Fork Count: {forks_count}</Typography>
-          <Typography>Date Created: {created_at}</Typography>
-        </AccordionDetails>
-        {/* </Accordion>
-      <Accordion> */}
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        ></AccordionSummary>
-        <AccordionDetails></AccordionDetails>
-      </Accordion>
+      <div>
+        <Accordion
+          style={{ backgroundColor: "#B8C0FF",
+                   borderRadius: "0.3rem" }}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            style={{ textAlign: 'left',
+                    color: '#0B3954',
+                    margin: '0.5rem' }}>
+            <p style={{ fontFamily: 'Press Start 2P | cursive'}}>{name}</p>
+          </AccordionSummary>
+          <Typography style={{ textAlign: 'left',
+                    color: '#0B3954',
+                    fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
+                    marginLeft: '1.5rem',
+                    marginRight: '1.5rem'}}>{description}</Typography>
+          <div className="accordian-details">
+            <AccordionDetails>
+                  <p>{language}</p>
+                  <p>{stargazers_count} stargazers</p>
+                  <p>{forks_count} forks</p>
+                  <p>Created {created_at}</p>                   
+            </AccordionDetails>
+          </div> 
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          ></AccordionSummary>
+          <AccordionDetails></AccordionDetails>
+        </Accordion>
+      </div>
     </div>
   );
 };

@@ -1,21 +1,114 @@
+body {
+    overflow: hidden;
+}
 
 header {
-    font-size: 15rem;
+    font-size: 1400%;
     font-family: 'Alfa Slab One', cursive;
     font-family: 'Chicle', cursive;
-    /* font-family: 'Faster One', cursive; */
-    /* font-family: 'Monofett', cursive; */
-    /* font-family: 'Libre Barcode 39 Text', cursive; */
-    /* font-family: 'Press Start 2P', cursive; */
-    /* background-color: #FEF180; */
+    margin-top: 1rem;
+    background-clip: border-box;
+    overflow: visible;
     color: #FF10F0;
-    /* background-clip: border-box; */
-    /* text-shadow: 2rem black; */
-    -webkit-text-stroke: 0.5rem #FEF180;
-    /* letter-spacing: 10px; */
-    /* -webkit-text-stroke: 0.6rem #f74600; */
-    /* paint-order: stroke fill; */
-    ;
+    text-shadow: #E9FF70 0.5rem 0.5rem;
+}
+
+input {
+    background-color: rgba(245,245,245,.35);
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    width: 40rem;
+    margin-right: 2rem;
+    color: #ffffff;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    letter-spacing: 0.00938em;
+    text-indent: 1rem;
+}
+
+input:focus-visible, input:focus, input:active {
+    outline: #ffffff;
+    outline-style: solid;
+    outline-width: 0.2rem;
+    background: rgba(245,245,245,.35);
+}
+
+input:hover {
+    outline: #ffffff;
+    outline-style: solid;
+    outline-width: 0.2rem;
+}
+
+::placeholder { 
+    color: #ffffff;
+    opacity: 1; 
+}
+  
+::-ms-input-placeholder {
+color: #ffffff
+}
+
+
+button {
+    position: relative;
+    width: 90px;
+    height: 80px;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease-in-out;
+}
+
+#button {
+    font-family: 'Press Start 2P', cursive;
+    color: #0B3954;
+    font-size: large;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+button:before,
+button:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: "";
+    margin-left: 5px;
+    left: 40px;
+    top: 50;
+    width: 40px;
+    height: 60px;
+    background: #F94144;
+    border-radius: 40px 40px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+button:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+button:hover {
+    transform: scale(1.5);
+}
+
+button:active {
+    transform: scale(0.98);
+    transition: all .1s linear;
 }
 
 .full-page {
@@ -23,55 +116,150 @@ header {
     flex-direction: row;
     background-image: url('images/costco-background.jpg');
     height: 100vh;
+    padding-top: 3em;
+    padding-left: 10em;
+    padding-right: 15em;
+    padding-bottom: 1em;
     background-position: top, left;
     background-size: cover;
     background-repeat: no-repeat;
-    overflow-y: hidden;
 }
 
 .left-hand-side {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    align-items: center;
+    width: 65%;
+    align-items: flex-start;
     justify-content: center;
 }
 
-.right-hand-side {
-    margin-top: 5rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+.search-container {
     display: flex;
     flex-direction: column;
-    padding-right: 0.4rem;
-    width: 25%;
-    z-index: 1;
-    /* justify-content: flex-end; */
-    background-color: rgba(245,245,245,.35);
-    max-height: 90%;
-    overflow-x: visible;
-    overflow-y: scroll;
-    transform: translate3d(20px, -20px, 20px);
-    border-radius: 0.3rem; 
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-/* * {
-    scrollbar-width: auto;
-    scrollbar-color: #ffffff #000000;
-  } */
+.search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20rem;
+}
 
-  *::-webkit-scrollbar {
-    width: 16px;    
-  }
+.error-message, .i-love-you-message {
+    
+    background-image: url('images/crumpled-paper-speech-bubble-677337.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: left;
+    display: flex;
+    margin-top: -10rem;
+    margin-left: -30rem;
+    flex-direction: row;
+    justify-items: center;
+    flex-wrap: wrap;
+    overflow: -moz-hidden-unscrollable;
+    font-family: 'Inconsolata', monospace;
+    font-size: x-large;
+    font-size-adjust: inherit;
+    padding-top: 3em;
+    padding-right: 20em;
+    padding-left: 20em;
+    padding-bottom: 5em;
+    line-height: 1.5em;
+    position: fixed;
+    z-index: 10;
+    height: 5em;
+    width: auto;
+}
 
-  *::-webkit-scrollbar-track {
+.right-hand-side {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 3%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: stretch;
+    padding-right: 0.5rem;
+    width: 30%;
+    z-index: 1;
+    max-height: 90%;
+    overflow-y: auto;
+    transform: translate3d(20px, -20px, 20px);
+    border-radius: 0.3rem; 
+    overflow-x: visible;
+}
+
+
+.right-hand-side::-webkit-scrollbar {
+    width: 16px;  
+    overflow: auto;
+}
+
+.right-hand-side::-webkit-scrollbar-track {
     opacity: 0%;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(245,245,245,.35);
+    border-radius: 10px;
+    overflow: auto;
 
-  }
+}
 
-  *::-webkit-scrollbar-thumb {
+.right-hand-side::-webkit-scrollbar-thumb {
     background-color: #ffffff;
     border-radius: 10px;
-  }
+    overflow: auto;
+}
 
+/* 
+@media screen and (min-width: 992px){
+.skill-icons {
+    height: 150vh;
+}
+
+.icon-box {
+    flex-direction: row;
+    margin: 4%;
+}
+
+svg {
+    width: 7%;
+    padding: 2%;
+    margin: 4%;
+}
+}
+
+@media screen and (max-width: 1200px){
+
+header {
+    flex-direction: row;
+}
+
+input {
+    width: 10vw;
+}
+
+    {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+}
+
+@media screen and (max-width: 600px){
+
+svg {
+    width: 10vw;
+}
+
+.skill-icons {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+}
+
+ */

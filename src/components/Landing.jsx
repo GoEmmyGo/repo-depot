@@ -7,6 +7,7 @@ const Landing = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [badSearchTerm, setBadSearchTerm] = useState(false);
+  const [goodSearchTerm, setGoodSearchTerm] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,6 +57,11 @@ const Landing = () => {
         };
 
         setSearchResult(parseData());
+
+        setGoodSearchTerm(true)
+        setTimeout(() => {
+          setGoodSearchTerm(false)}, 3000)
+
       })
 
       .catch((err) => {
@@ -66,7 +72,7 @@ const Landing = () => {
         setBadSearchTerm(true);
         setTimeout(() => {
           setBadSearchTerm(false);
-        }, 9000);
+        }, 3000);
       });
   };
 
@@ -146,6 +152,8 @@ const Landing = () => {
   //   timeStyle: 'long'
   // })
 
+  
+
   const displayRepoList = () => {
     return searchResult.map((data) => {
       return (
@@ -155,7 +163,6 @@ const Landing = () => {
           description={data.description}
           stargazers_count={data.stargazers_count}
           forks_count={data.forks_count}
-          // created_at={data.created_at}
           created_at={data.created_at}
         />
       );
@@ -165,26 +172,30 @@ const Landing = () => {
   return (
     <div className="full-page">
       <div className="left-hand-side">
-        {/* <header>Repo.Depot</header> */}
-        <header>Repo | Depot</header>
-        <div className="search-container">
+          <div className="search-container">
           <form className="search-form" onSubmit={(e) => handleSubmit(e)}>
             <input
               type="text"
-              placeholder="Welcome to Repo Depot, I love you"
+              placeholder="search repos"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             ></input>
-            <button type="submit">Get Repo</button>
+            <button type="submit"><p id="button">GO</p></button>
           </form>
+          {goodSearchTerm
+            ?
+            (<div className="i-love-you-message">Welcome to Repo Depot, <br/>I love you</div>)
+            :
+              null}
           {badSearchTerm 
             ? 
               (<div className="error-message">
-                  So we don't have this repo, but we DO have law degrees... maybe chug some Brawndo and try searching a cooler company?
+                  Uhhh, what's {searchTerm}? We got Brawndo?
               </div>)
             : 
               null}
         </div>
+        <header>Repo | Depot</header>
       </div>
       <div className="right-hand-side">{displayRepoList()}</div>
     </div>
